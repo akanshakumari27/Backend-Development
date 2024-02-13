@@ -1,0 +1,78 @@
+REPL - Read Evaluate Print Loop (same as used before in Js)
+
+*** Terminal ***
+ ~ node  (will enter as node and can run Js lines here)
+ ~ window {No such window object exist in node}
+ ~ global (Global Object)
+
+Now we will Go to Node Folder created
+ ~ cd folder1
+ ~ touch script.Js  {to create new js file}
+ ~ node script.js   {to run our Js file}
+ ~ process  {this object will print alot information about process in Node}
+ ~ process.version {this all we will find in above Process Object }
+ ~ process.release 
+ ~ process.cwd()
+ ~ process.argv {In terminal we won't get any Special to see}
+
+
+Now we will go to Vs Code file name(Node.js)
+  - console.log(process.argv)
+Terminal 
+  ~ node Node.js   //Output will be an array
+  ~  node Node.js Heloo Hey How  //Array of all 4
+ 
+ 
+Vs Code
+  - let astr  = process.argv;
+  for(let i =0;i< astr.length; i++){
+      console.log("Hello " + astr[i] )
+  }
+Terminal 
+  ~ node Node.js Akansha Aman Shiyra Priya
+
+
+// *****{ Module Exports!! }*****
+require => built-in function to include External moduels that exist in External files
+module.exports => Special Object 
+
+Node.js(file 1)
+- module.exports = "1234"
+
+Math.js(file 2)
+- const someValue = require("./Node");  //as both file exist in same folder
+- console.log(someValue) 
+
+Terminal
+~ node Math.js {for output} 
+
+// If module.export is empty it will still return "{}" an empty Object as module.object is itself an empty Object, we just provide values to fill that Object
+
+
+// *********************
+Node.js(file 1) 
+let Sum = (a,b)=>{a+b}
+let Mul = (a,b)=>{a*b}
+let Div =(a,b)=>{a/b}
+
+module.exports={
+    Sum:Sum,
+    Mul:Mul,
+    Div:Div
+}
+
+Math.js(file 2)
+// let getSum = require("./Node") 
+// console.log(getSum)
+
+console.log(require('./Node'))   //run in terminal
+
+
+// ***********************
+Node.js(file 1) 
+
+module.exports.sum=(a,b)=>{a+b}
+//OR
+exports.Mul=(a,b)=>{a*b}
+
+exports= 5 //But this will not work!!
