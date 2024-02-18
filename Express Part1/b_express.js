@@ -1,5 +1,5 @@
 const express = require("express")
-const app = express()  //express() will return value, which we will store in Variable name getExp
+const app = express()  //express() will return value, which we will store in Variable name app
 // Now this "app" will help us to build "Server Side WebApplication", It's an Object
 // Printing Object's properties 
 console.dir(app) 
