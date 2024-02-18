@@ -1,0 +1,22 @@
+Library Vs FrameWork
+-> Library is Collection of Pre-Written Code which is used to perform Specific Tasks Ex- Axios (to perform small set of Task)
+-> FrameWork is set of Pre-Written Codes that provides Structure for Developing Software Applications Ex- Express(to define Overall Web Apllucation Structure)
+
+Express helps to build User-Side(Backend) Web-applications 
+a) Listen Incoming Request
+b) Parse Request
+c) Match Response with Routes
+d) Response
+
+Express is itself a package inside npm
+
+So, to Start with Express
+Terminal 
+~ npm init (install package.json)
+~ npm install express (we can get Steps by searching express in npm) 
+
+~ npm init -y (It will install pacakge.json automatically by all steps, no need to do steps manually)
+~ npm i express (for installing express)
+~ npm i ejs  (for ejs "Embedded Javacsript Templates")
+
+//Express in npm -> Documentation -> Getting Started -> installing -> Hello World
