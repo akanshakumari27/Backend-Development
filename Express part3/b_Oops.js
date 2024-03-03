@@ -51,14 +51,19 @@ p1.talk === p2.talk
 // It's Constructor
 // Can also search it's approch in - "new operator mdn"
 
+//Constructor 
+// Always Start from Capital Letter
+// Doesn't return anything ,(though can do following both small letter and return, but not good pratice)
+
 //This is first making an Constructor
-function personInfo(name, age){
+function PersonInfo(name, age){
     this.name = name,
     this.age = age
 }
-personInfo.prototype.talk = function(){
-    console.log(`Welcome ${this.name} in Our page, your age is ${this.age}`)
-}
+PersonInfo.prototype.talk = function(){
+    console.log(`Welcome ${this.name} in Our page, your age is ${this.age}`)  
+}  
+//Constructor Properties + writting Constructor function Outside by writting ConstructorName.prototype
 
 // Now creating an Object
 let p1 = new personInfo("Sam",34)
