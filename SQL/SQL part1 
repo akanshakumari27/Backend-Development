@@ -1,0 +1,51 @@
+# DataBase
+  It is collection of data in a format that can be easily accesed
+
+# Why Database?
+  - Can Store Large Data
+  - Features like Securtiy and Scalability
+  - Easiy to Insert, Delete, Update
+
+# Database Management System 
+  - It just an System to Manage the Database or Data
+
+# SQL vs NoSQL
+  SQL
+  - Relational database (Data Stored in Tables(Relation-Table))
+  - Eg: MySQL, Oracle, PostgreSQl etc
+  NoSQL 
+  - Non Relational Database
+  - Data Stored in Document/ key-val / graphs etc (but not in Table)
+  - Eg: MongoDb, Cassandra, Neo4j etc
+
+# SQl (Structured Query Language)
+  - SQL is programming language used to interact with relational Databases
+  - like [HTML -> Structuring], [CSS -> Styling], [Js -> Functionality], [SQL -> interaction with Databases]
+  - Columns -> Design(Schema) 
+  - Rows -> Tuple
+
+# Basic Commands
+  {To create Datbase}
+  - CREATE DATABASE any_name;
+  - create database any_name; (as it's case insensitive)
+
+  {To delete Datbase}
+  - DROP DATBASE any_name;
+  - drop database any_name;
+  
+  {To use that particular database for table}
+  - use any_name; (It will highlight that database)
+
+  - CREATE TABLE student (
+   roll_no INT,
+   name VARCHAR(30),
+   age INT
+   );
+
+  - INSERT INTO student
+    VALUES 
+    (101,"adam",21),
+    (102,"priya",34);
+
+  - SELECT * FROM student;
+
