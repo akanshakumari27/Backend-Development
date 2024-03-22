@@ -1,0 +1,105 @@
+Clauses -> SQL clauses helps us to specify a condition on the columns or the records of a table.
+
+1) Where Clause, It is to Extract Data with particular conditions(if-else), there are 4 different Operators
+
+ a) Arithmetic Operators: "+", "-", "*", "%", "/"
+ b) Comparison Operators: "=", "!=", ">", "<=", ">=", "<"
+ c) Logical Operators: "AND", "OR", "NOT", "BETWEEN", "ALL", "LIKE", "ANY"
+ d) Bitwise Operators: "&", "|"
+
+
+- SELECT * FROM user; 
+- SELECT name, age, email FROM user  {OR}
+- WHERE age BETWEEN 15 AND 30; {Select within given Range}
+- WHERE age>30 AND followers>300;  {Both Condition to be TRUE}
+
+- SELECT name, age, email FROM user
+- WHERE age IN (29, 15);  {IN, Extracting Data which matches these Values}
+- WHERE age NOT IN(15,29);  {NOT IN, neglecting Data which matches these Values}
+
+
+2) Limit Clause, Set an upper limit on number of rows to be Returned
+
+- SELECT name, age, email FROM user
+- WHERE age>14
+- LIMIT 2;  {Returning 2 upper values of Table, whose age greater than 14 OR just LIMIT 2, it will Return 2 values from Upper table}
+
+
+3) Order By Clause, to sort in Ascending (ASC) Or Decending (DESC)
+ 
+- SELECT age, name, followers FROM user
+- ORDER BY followers ASC;
+- ORDER BY followers DESC;
+- ORDER BY followers; {It will by default Order it in AScending Order}
+
+
+4) Aggregate Function, Perform calculation on set of Values and return Single Value 
+
+ 1) COUNT() ,{Counts the number of values present in it}
+ 2) MAX()
+ 3) MIN()
+ 4) SUM()
+ 5) AVG()
+
+- SELECT AVG(age) FROM user;
+- SELECT SUM(age) FROM user;
+
+
+5) Group By, to group according to need
+
+- SELECT age, count(id) FROM user  {count will count total number of person present in the Group}
+- GROUP BY age;
+
+
+6) Having clause, (Where clause applies condition on Rows of Table, Having Clause applies conditions on Groups)
+
+- SELECT age, max(followers)
+- FROM user
+- GROUP BY age
+- HAVING max(followers);
+
+
+# Table Queries
+
+a) Update (to Update Existing Row)
+
+- SET SQL_SAFE_UPDATES = 0;  {by default it's value = 1, means safe update is working, u can't make Updates in it, So we need to Close it}
+
+- UPDATE user
+- SET followers = 600;
+- WHERE age = 15;
+
+
+b) Delete
+
+- DELETE FROM user  {this will work without sql_safe_updates}
+- WHERE age = 15; {If we don't write "where" Statement it will Delete all rows}
+
+
+c) Alter {to change Scheme}
+
+ i) ADD COLUMN
+  - ALTER TABLE user
+  - ADD COLUMN city VARCHAR(25) DEFAULT "Delhi";
+
+ ii) DROP COLUMN
+  - ALTER TABLE user
+  - DROP COLUMN age;
+
+ iii) RENAME TABLE
+  - ALTER TABLE user
+  - RENAME TO instauser;
+  
+ iv) RENAME COLUMN
+  - ALTER TABLE user
+  - RENAME COLUMN followers subs INT DEFAULT 0;
+  
+  v) MODIFY TABLE (modifying datatype/constraints)
+  - ALTER TABLE user
+  - MODIFY COLUMN subs INT DEFAULT 5;
+
+  vi) TRUNCATE (to delete Table's data)
+  - TRUNCATE TABLE user;
+   {But it will show error, because we created linkage between 2 tables(user and posts) by using Foreign key, So posts table aren't allowing to Truncate it, So}
+  - DROP TABLE posts;
+    {Now First Drop(by running it) then Truncate it}
